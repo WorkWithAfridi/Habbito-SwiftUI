@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		EFFECBC42D2F9FC9005D6689 /* Habbito */ = {
+		EFFECBE62D2FA000005D6689 /* Habbito */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Habbito;
 			sourceTree = "<group>";
@@ -32,7 +32,7 @@
 		EFFECBB92D2F9FC9005D6689 = {
 			isa = PBXGroup;
 			children = (
-				EFFECBC42D2F9FC9005D6689 /* Habbito */,
+				EFFECBE62D2FA000005D6689 /* Habbito */,
 				EFFECBC32D2F9FC9005D6689 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				EFFECBC42D2F9FC9005D6689 /* Habbito */,
+				EFFECBE62D2FA000005D6689 /* Habbito */,
 			);
 			name = Habbito;
 			packageProductDependencies = (
