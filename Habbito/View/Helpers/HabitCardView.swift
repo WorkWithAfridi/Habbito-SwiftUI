@@ -17,7 +17,7 @@ struct HabitCardView: View {
                     Text(habit.name)
                         .font(.callout)
 
-                    Text("Created At" + habit.createdAt.format("dd, MM YYYY"))
+                    Text("Created At " + habit.createdAt.format("dd MMM, YYYY"))
                         .font(.caption2)
                         .foregroundStyle(.gray)
                 }
@@ -30,7 +30,35 @@ struct HabitCardView: View {
             )
             .applyPaddedBackground(10)
             .matchedTransitionSource(id: habit.uniqueID, in: animationId)
+            
+            if habit.frequencies.contains(where: { $0.rawValue == Date.now.weekDay }) &&
+                !habit.completedDates.contains(Date.now.startOfDay.timeIntervalSince1970) {
+                CompleteButton()
+            }
         }
+    }
+    
+    @ViewBuilder
+    func CompleteButton() -> some View {
+        VStack (spacing: 10) {
+            Text("Have you completed the habit today?")
+                .font(.callout)
+            
+            HStack(spacing: 10) {
+                Button("Yes, completed 🎉") {
+                    withAnimation(.snappy) {
+                        let todayTimeStamp = Date.now.startOfDay.timeIntervalSince1970
+                        habit.completedDates.append(todayTimeStamp)
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
+                .tint(.green)
+                .applyPaddedBackground(10)
+            }
+        }
+        .hSpacing(.center)
+        .applyPaddedBackground(10)
     }
 
     @ViewBuilder

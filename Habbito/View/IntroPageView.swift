@@ -118,7 +118,7 @@ struct IntroPageView: View {
                     .foregroundStyle(.white)
                     .hSpacing(.center)
                     .padding(.vertical, 12)
-                    .background(.black.gradient, in: .rect(cornerRadius: 12))
+                    .background(.purple.gradient, in: .rect(cornerRadius: 12))
             }
             .disableWithOpacity(username.isEmpty)
             .padding(.top, 10)
@@ -136,7 +136,7 @@ struct IntroPageView: View {
             .foregroundStyle(.white.shadow(.drop(radius: 10)))
             .blendMode(.overlay)
             .frame(width: 120, height: 120)
-            .background(.orange.gradient, in: .rect(cornerRadius: 32))
+            .background(.purple.gradient, in: .rect(cornerRadius: 32))
             .background{
                 RoundedRectangle(cornerRadius: 35)
                     .fill(.background)
